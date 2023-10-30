@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Call,Apply and Blind Method</h1>
+    <h3>Call Method</h3>
+    <script>
+        let nameOpj = {
+            name: "Kishan"
+        }
+        let printname = {
+            name:"Dharm",
+            sayHi:function(age){
+                document.write(this.name + " age is " + age);
+            }
+        }
+        Object.prototype.MyCall = function (bindOpj, ...args){
+            bindOpj.mymethod = this;
+            bindOpj.mymethod(...args) ;
+        }
+        printname.sayHi.MyCall(nameOpj,20);
+    </script>
+    <br>
+    <h3>Apply Method</h3>
+    <script>
+        let nameOmg = {
+            name: "Pathu"
+        }
+        let Print = {
+            name: "Utsav",
+            sayHi: function(...age){
+                document.write(this.name + " age is " + age);
+            }
+        }
+        Print.sayHi.apply(nameOmg, [20]);
+    </script>
+    <br>
+    <h3>Blind Method</h3>
+    <script>
+        let nameObj = {
+            name: "Dharm"
+        }
+        let PrintName = {
+            name: "Dharmik",
+            sayHi: function() {
+                document.write(this.name);
+            }
+        }
+        Object.prototype.MyBind = function (bindObj){
+
+            bindObj.MyMethod = this;
+            return function () {
+                bindObj.MyMethod();
+            }
+        }
+        let HiFun = PrintName.sayHi.MyBind(nameObj);
+        HiFun();
+    </script>
+</body>
+</html>
