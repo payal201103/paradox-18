@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom Method</h1>
+        <label>Enter Value 1: </label>
+    <input type="text" id="val1" />
+    <br />
+    <br />
+    <label>Enter Value 2: </label>
+    <input type=".text" id="val2" />
+    <br />
+    <button onclick="getAdd()">Click To Add</button>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function getAdd() {
+             
+            
+            const num1 = Number(document.getElementById("val1").value);
+              
+            const num2 = Number(document.getElementById("val2").value);
+            const add = num1 + num2;
+            console.log(add);
+             
+            document.getElementById("result").innerHTML = "Addition : " + add;
+             
+            document.getElementById("result").style.color = "red";
+        }
+    </script>
+    </script>
+</body>
+</html>

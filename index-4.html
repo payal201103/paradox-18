@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Passby value and pass by reference</h1>
+    <h3>Passby value</h3>
+    <script>
+        function Passbyvalue(a, b) {
+            let tmp;
+            tmp = b;
+            b = a;
+            a = tmp;
+            document.write(`Inside Pass by value 
+        function : a = ${a} b = ${b}`);
+            document.write("<br>");
+        }
+
+        let a = 1;
+        let b = 2;
+        document.write(`Before calling Pass by value 
+        Function: a = ${a} b = ${b}`);
+        document.write("<br>");
+
+        Passbyvalue(a, b);
+
+        document.write(`After calling Pass by value 
+       Function: a =${a} b = ${b}`);
+    </script>
+    <br>
+    <br>
+    <h3>pass by reference</h3>
+    <script>
+        function PassbyReference(main) {
+
+            
+            main.c = "GEEKSFORGEEKS";
+            document.write(`Inside Pass by
+     Reference Function : obj `);
+     document.write("<br>");
+            document.write(main);
+        }
+
+        let main = {
+            a: 10,
+            b: 20
+
+        }
+        document.write(`Mutating the original object : `)
+        document.write(`Before calling Pass By
+     Reference Function : obj`);
+     document.write("<br>");
+        document.write(main);
+
+        PassbyReference(main)
+        document.write(`After calling Pass By 
+     Reference Function : obj`);
+     document.write("<br>");
+        document.write(main);
+    </script>
+</body>
+
+</html>
